@@ -6,6 +6,7 @@ Cytoscape.js là một thư viện đồ thị được viết bằng ngôn ng�
 Dưới đây là ví dụ về đồ thị Cytoscape đơn giản và hiển thị kết quả chạy thử của thuật toán Dijkstra
 ![Hình ảnh](https://github.com/NguyenSyHung2k3/CytoscapeProject/blob/main/Screenshot%202024-01-09%20111301.png)
 ## Vẽ đồ thị bằng Cytoscape.js
+* Khởi tạo cytoscape
 ```
 let cy = cytoscape({
 
@@ -75,4 +76,24 @@ let cy = cytoscape({
         }
       
       });
+```
+* Thêm các Element vào trong đồ thị
+```
+cy.add([
+          { group: 'nodes',data: { id: 'n1', name:'n11' }, position: { x: 50, y: 200 } },
+          { group: 'nodes',data: { id: 'n2' }, position: { x: 131, y: 226 } },
+          { group: 'nodes',data: { id: 'n3' }, position: { x: 128, y: 143 } },
+          { group: 'nodes',data: { id: 'n4' }, position: { x: 249, y: 142 } },
+          { group: 'nodes',data: { id: 'n5' }, position: { x: 191, y: 62 } },
+          { group: 'nodes',data: { id: 'n6' }, position: { x: 66, y: 83 } },
+          { group: 'edges',data: { id: 'e0', source: 'n1', target: 'n2', label: 7 } },
+          { group: 'edges',data: { id: 'e1', source: 'n2', target: 'n3', label: 10 } },
+          { group: 'edges',data: { id: 'e2', source: 'n1', target: 'n6', label: 14 } },
+          { group: 'edges',data: { id: 'e3', source: 'n1', target: 'n3', label: 9 } },
+          { group: 'edges',data: { id: 'e4', source: 'n2', target: 'n4', label: 15 } },
+          { group: 'edges',data: { id: 'e5', source: 'n3', target: 'n4', label: 11 } },
+          { group: 'edges',data: { id: 'e6', source: 'n3', target: 'n6', label: 2 } },
+          { group: 'edges',data: { id: 'e7', source: 'n6', target: 'n5', label: 9 } },  
+          { group: 'edges',data: { id: 'e8', source: 'n5', target: 'n4', label: 6 } },
+      ]);
 ```
