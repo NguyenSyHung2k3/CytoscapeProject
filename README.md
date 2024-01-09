@@ -97,3 +97,13 @@ cy.add([
           { group: 'edges',data: { id: 'e8', source: 'n5', target: 'n4', label: 6 } },
       ]);
 ```
+* Duyệt đồ thị bằng thuật toán Dijkstra có sẵn trong thư viện
+```
+var dijkstra = cy.elements().dijkstra('#n1', function(edge){
+        return edge.data('label');
+      });
+      console.log( dijkstra.pathTo( cy.$('#n5') ));
+      console.log( dijkstra.distanceTo( cy.$('#n5') ));
+      var p = dijkstra.pathTo( cy.$('#n5') );
+```
+Thuật toán duyệt từ đỉnh n1 đến n5 và cho ra quãng đường đi bé nhất là 20.
